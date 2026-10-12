@@ -1,0 +1,344 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/ok2ok2ok2ok2/aiad/main/schema/ai-ads.schema.json",
+  "title": "AIAD 0.1 — AI 可讀廣告聲明",
+  "type": "object",
+  "required": [
+    "aiad",
+    "issuer",
+    "updated",
+    "offers"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "aiad": {
+      "const": "0.1"
+    },
+    "issuer": {
+      "type": "object",
+      "required": [
+        "name",
+        "domain",
+        "contact"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "domain": {
+          "type": "string",
+          "format": "hostname"
+        },
+        "contact": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 200
+        },
+        "registration_id": {
+          "type": "string",
+          "maxLength": 64
+        }
+      }
+    },
+    "updated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "offers": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 500,
+      "items": {
+        "$ref": "#/$defs/offer"
+      }
+    }
+  },
+  "$defs": {
+    "offer": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "title",
+        "summary",
+        "url",
+        "valid_until",
+        "not_suitable_for",
+        "sponsorship"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]{1,64}$"
+        },
+        "type": {
+          "enum": [
+            "product",
+            "service",
+            "lodging",
+            "event",
+            "subscription",
+            "other"
+          ]
+        },
+        "category": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 280
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "region": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 32
+          }
+        },
+        "price": {
+          "$ref": "#/$defs/price"
+        },
+        "specs": {
+          "type": "array",
+          "maxItems": 50,
+          "items": {
+            "$ref": "#/$defs/spec"
+          }
+        },
+        "claims": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "$ref": "#/$defs/claim"
+          }
+        },
+        "suitable_for": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          }
+        },
+        "not_suitable_for": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 20,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          }
+        },
+        "valid_from": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "valid_until": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "sponsorship": {
+          "$ref": "#/$defs/sponsorship"
+        }
+      }
+    },
+    "price": {
+      "type": "object",
+      "required": [
+        "amount",
+        "currency"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "amount": {
+          "type": "string",
+          "pattern": "^[0-9]+(\\.[0-9]{1,4})?$"
+        },
+        "currency": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        },
+        "unit": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "includes_tax": {
+          "type": "boolean"
+        },
+        "conditions": {
+          "type": "string",
+          "maxLength": 200
+        }
+      }
+    },
+    "spec": {
+      "type": "object",
+      "required": [
+        "name",
+        "value"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "maxLength": 60
+        },
+        "value": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ]
+        },
+        "unit": {
+          "type": "string",
+          "maxLength": 20
+        }
+      }
+    },
+    "claim": {
+      "type": "object",
+      "required": [
+        "statement",
+        "level"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "statement": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "level": {
+          "enum": [
+            "L0",
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        "evidence_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "verifier": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "reference_id": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "expires": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "level": {
+                "enum": [
+                  "L1",
+                  "L2",
+                  "L3"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "evidence_url"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "level": {
+                "enum": [
+                  "L2",
+                  "L3"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "verifier"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "level": {
+                "const": "L3"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "reference_id"
+            ]
+          }
+        }
+      ]
+    },
+    "sponsorship": {
+      "type": "object",
+      "required": [
+        "paid"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "paid": {
+          "type": "boolean"
+        },
+        "payer": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "program": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "disclosure": {
+          "type": "string",
+          "maxLength": 40
+        }
+      },
+      "if": {
+        "properties": {
+          "paid": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "payer",
+          "disclosure"
+        ]
+      }
+    }
+  }
+}

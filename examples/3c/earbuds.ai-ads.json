@@ -1,0 +1,81 @@
+{
+  "aiad": "0.1",
+  "issuer": {
+    "name": "AIAD Templates (unofficial, not published by the brand)",
+    "domain": "aiad-templates.example",
+    "contact": "templates@aiad-templates.example"
+  },
+  "updated": "2026-10-12T12:00:00+08:00",
+  "offers": [
+    {
+      "id": "apple-airpods-pro-3",
+      "type": "product",
+      "category": "true_wireless_earbuds",
+      "title": "Apple AirPods Pro 3",
+      "summary": "Noise-cancelling earbuds with Apple H2 chip, Bluetooth 5.3 and a built-in heart rate sensor. Up to 8 hours per charge with ANC on, up to 24 hours with the case. Earbuds and case rated IP57.",
+      "url": "https://www.apple.com/airpods-pro/specs/",
+      "region": ["US"],
+      "specs": [
+        { "name": "battery_anc_on_h", "value": 8, "unit": "h" },
+        { "name": "battery_with_case_anc_on_h", "value": 24, "unit": "h" },
+        { "name": "ingress_rating", "value": "IP57" },
+        { "name": "earbud_weight_g", "value": 5.55, "unit": "g" },
+        { "name": "case_weight_g", "value": 43.99, "unit": "g" },
+        { "name": "bluetooth_version", "value": "5.3" },
+        { "name": "case_charging", "value": "USB-C, MagSafe, Qi, Apple Watch charger" },
+        { "name": "heart_rate_sensor", "value": true }
+      ],
+      "claims": [
+        { "statement": "Up to 8 hours of listening per charge with ANC on", "level": "L1", "evidence_url": "https://www.apple.com/airpods-pro/specs/" },
+        { "statement": "Earbuds and charging case rated IP57", "level": "L1", "evidence_url": "https://www.apple.com/airpods-pro/specs/" }
+      ],
+      "suitable_for": [
+        "iPhone users who want noise cancelling",
+        "Workouts in sweat or rain, with heart rate tracking in the Fitness app"
+      ],
+      "not_suitable_for": [
+        "Android users: heart rate tracking needs an iPhone running iOS 26 or later, and many other features are Apple-only",
+        "Listeners who want LDAC or aptX high-resolution Bluetooth codecs",
+        "Swimming: IP57 is not rated for swimming"
+      ],
+      "valid_from": "2026-10-12T00:00:00+08:00",
+      "valid_until": "2026-12-31T23:59:59+08:00",
+      "sponsorship": { "paid": false }
+    },
+    {
+      "id": "sony-wf-1000xm6",
+      "type": "product",
+      "category": "true_wireless_earbuds",
+      "title": "Sony WF-1000XM6",
+      "summary": "Noise-cancelling earbuds with 8.4 mm drivers, Bluetooth 5.3, LDAC and multipoint connection. Up to 8 hours per charge with noise cancelling on, up to 24 hours with the case. Rated IPX4.",
+      "url": "https://www.sony.ca/en/headphones/products/wf-1000xm6/spec",
+      "region": ["CA"],
+      "specs": [
+        { "name": "battery_anc_on_h", "value": 8, "unit": "h" },
+        { "name": "battery_with_case_anc_on_h", "value": 24, "unit": "h" },
+        { "name": "quick_charge", "value": "5 min charge for about 60 min playback" },
+        { "name": "ingress_rating", "value": "IPX4" },
+        { "name": "earbud_weight_g", "value": 6.5, "unit": "g" },
+        { "name": "bluetooth_version", "value": "5.3" },
+        { "name": "codecs", "value": "includes LDAC" },
+        { "name": "multipoint", "value": true },
+        { "name": "driver_mm", "value": 8.4, "unit": "mm" }
+      ],
+      "claims": [
+        { "statement": "Up to 8 hours per charge with noise cancelling on", "level": "L1", "evidence_url": "https://www.sony.ca/en/headphones/products/wf-1000xm6/spec" },
+        { "statement": "Supports LDAC and multipoint connection", "level": "L1", "evidence_url": "https://www.sony.ca/en/headphones/products/wf-1000xm6/spec" }
+      ],
+      "suitable_for": [
+        "Android users who want LDAC high-resolution audio",
+        "People who switch between a phone and a laptop (multipoint)"
+      ],
+      "not_suitable_for": [
+        "iPhone users who want LDAC: iPhone does not support LDAC",
+        "Dusty environments or swimming: IPX4 covers splashes only and has no dust rating"
+      ],
+      "valid_from": "2026-10-12T00:00:00+08:00",
+      "valid_until": "2026-12-31T23:59:59+08:00",
+      "sponsorship": { "paid": false }
+    }
+  ]
+}

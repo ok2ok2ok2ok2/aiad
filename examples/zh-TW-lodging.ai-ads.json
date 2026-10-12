@@ -1,0 +1,84 @@
+{
+  "aiad": "0.1",
+  "issuer": {
+    "name": "山嵐民宿",
+    "domain": "shanlan.example",
+    "contact": "service@shanlan.example",
+    "registration_id": "南投縣民宿 123 號"
+  },
+  "updated": "2026-10-12T09:00:00+08:00",
+  "offers": [
+    {
+      "id": "weekday-double-2026q4",
+      "type": "lodging",
+      "category": "民宿 / 雙人房",
+      "title": "平日雙人房（含早餐）",
+      "summary": "清境農場往合歡山方向 2.3 公里，雙人房一晚含兩份早餐。平日入住，附室內停車位一格。",
+      "url": "https://shanlan.example/rooms/double",
+      "region": [
+        "TW-NAN"
+      ],
+      "price": {
+        "amount": "2800",
+        "currency": "TWD",
+        "unit": "每晚",
+        "includes_tax": true,
+        "conditions": "週日至週四入住，連假與 12/24–1/1 除外"
+      },
+      "specs": [
+        {
+          "name": "海拔",
+          "value": 1750,
+          "unit": "m"
+        },
+        {
+          "name": "床型",
+          "value": "雙人床 1 張"
+        },
+        {
+          "name": "可住人數",
+          "value": 2
+        },
+        {
+          "name": "無障礙房",
+          "value": false
+        }
+      ],
+      "claims": [
+        {
+          "statement": "合法登記民宿",
+          "level": "L3",
+          "evidence_url": "https://taiwanstay.net.tw/",
+          "verifier": "交通部觀光署",
+          "reference_id": "南投縣民宿 123 號"
+        },
+        {
+          "statement": "2025 年住客平均評分 4.7（共 312 則）",
+          "level": "L1",
+          "evidence_url": "https://shanlan.example/reviews/2025"
+        },
+        {
+          "statement": "房間看得到雲海",
+          "level": "L0"
+        }
+      ],
+      "suitable_for": [
+        "兩人平日出遊、自行開車",
+        "想避開假日人潮、預算每晚三千內"
+      ],
+      "not_suitable_for": [
+        "需要無障礙設施的旅客：房間在二樓，沒有電梯",
+        "攜帶寵物",
+        "冬季沒有雪鏈的機車騎士：門前坡道會結冰"
+      ],
+      "valid_from": "2026-10-01T00:00:00+08:00",
+      "valid_until": "2026-12-31T23:59:59+08:00",
+      "sponsorship": {
+        "paid": true,
+        "payer": "山嵐民宿",
+        "program": "某旅遊助理贊助方案",
+        "disclosure": "贊助"
+      }
+    }
+  ]
+}

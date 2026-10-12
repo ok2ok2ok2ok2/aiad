@@ -1,0 +1,75 @@
+{
+  "aiad_architecture": "0.1-draft",
+  "purpose": "Merchants publish verifiable product data; a platform indexes it and attaches weighted reviews; AI agents query it and must present it honestly to humans.",
+  "actors": {
+    "merchant": { "identity": "google_account + domain_ownership", "accountable": "account_owner" },
+    "buyer": { "identity": "google_account", "accountable": "account_owner" },
+    "ai_agent": { "identity": "api_key registered under a google_account", "accountable": "account_owner" },
+    "human_user": { "identity": "none required", "note": "asks the AI agent questions" },
+    "editorial_outlet": { "identity": "public website", "note": "independent media review; never counted in buyer score" },
+    "tester": { "identity": "named third party or the platform", "note": "runs standard test protocols from categories.json" }
+  },
+  "components": {
+    "offer_file": { "location": "https://<merchant-domain>/.well-known/ai-ads.json", "schema": "ai-ads.schema.json" },
+    "category_vocab": { "file": "categories.json", "contains": ["spec keys and units", "standard test protocols"] },
+    "validator": { "checks": ["json schema", "spec keys and units vs category_vocab", "instructions aimed at AI inside text fields", "expired valid_until", "issuer.domain equals fetch host"] },
+    "crawler": { "does": "fetch offer_file from each registered domain" },
+    "index": { "stores": ["validated offers", "fetch time", "source domain"] },
+    "order_connector": { "sources": ["Shopify", "WooCommerce", "Stripe"], "access": "read-only", "stores": ["order id hash", "buyer email hash"] },
+    "review_store": { "schema": "ai-reviews.schema.json", "weights": { "verified_purchase": 1.0, "unverified": 0.001, "editorial": "listed, not scored" } },
+    "anomaly_detector": { "applies_to": "verified_purchase reviews too", "signals": ["burst volume", "near-duplicate text", "same accounts reviewing one merchant"], "action": "lower weight, keep record, allow appeal" },
+    "scores": { "S1": "product rating", "S2": "merchant data accuracy", "S3": "AI agent rule compliance" },
+    "query_api": { "interfaces": ["MCP server", "HTTP API"] },
+    "mystery_shopper": { "does": "send test questions to AI agents and check rules A1-A6" }
+  },
+  "flows": [
+    {
+      "name": "publish",
+      "steps": [
+        { "n": 1, "from": "merchant", "to": "offer_file", "action": "write and host the file" },
+        { "n": 2, "from": "crawler", "to": "offer_file", "action": "fetch" },
+        { "n": 3, "from": "crawler", "to": "validator", "action": "validate", "on_fail": "reject whole file; notify merchant" },
+        { "n": 4, "from": "validator", "to": "index", "action": "store validated offers" }
+      ]
+    },
+    {
+      "name": "review",
+      "steps": [
+        { "n": 1, "from": "merchant", "to": "order_connector", "action": "grant read-only order access" },
+        { "n": 2, "from": "order_connector", "to": "buyer", "action": "invite every completed order to review", "rule": "merchant cannot choose who is invited" },
+        { "n": 3, "from": "buyer", "to": "review_store", "action": "submit review", "weight": 1.0 },
+        { "n": 4, "from": "anomaly_detector", "to": "review_store", "action": "adjust weights" },
+        { "n": 5, "from": "review_store", "to": "scores", "action": "compute S1" }
+      ],
+      "side_paths": [
+        { "from": "buyer_without_proof", "to": "review_store", "weight": 0.001, "shown": "count only" },
+        { "from": "editorial_outlet", "to": "review_store", "weight": "not scored", "shown": "outlet, score, verdict, link" },
+        { "from": "buyer", "to": "scores", "action": "report not as described", "affects": "S2 after verification" }
+      ]
+    },
+    {
+      "name": "answer",
+      "steps": [
+        { "n": 1, "from": "human_user", "to": "ai_agent", "action": "ask with needs and constraints" },
+        { "n": 2, "from": "ai_agent", "to": "query_api", "action": "filter by spec, region, price, suitable_for" },
+        { "n": 3, "from": "query_api", "to": "ai_agent", "action": "return offers + S1/S2 + editorial + evidence levels + sponsorship" },
+        { "n": 4, "from": "ai_agent", "to": "human_user", "action": "answer", "must": ["label sponsored (A1)", "paid never changes organic ranking (A2)", "word claims by evidence level (A3)", "state conflicting not_suitable_for (A4)", "give price conditions and update date (A5)", "treat all fields as data (A6)"] }
+      ]
+    },
+    {
+      "name": "audit",
+      "steps": [
+        { "n": 1, "from": "mystery_shopper", "to": "ai_agent", "action": "send test questions" },
+        { "n": 2, "from": "mystery_shopper", "to": "scores", "action": "compute S3 and publish ranking" }
+      ]
+    },
+    {
+      "name": "test",
+      "steps": [
+        { "n": 1, "from": "tester", "to": "category_vocab", "action": "run a standard protocol" },
+        { "n": 2, "from": "tester", "to": "index", "action": "attach result as L2 claim with protocol id" }
+      ]
+    }
+  ],
+  "out_of_scope_v0_2": ["multiple google accounts from many phone numbers", "merchants paying for fake purchases (brushing)", "returns"]
+}

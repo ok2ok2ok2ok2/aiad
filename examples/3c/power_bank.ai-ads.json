@@ -1,0 +1,103 @@
+{
+  "aiad": "0.1",
+  "issuer": {
+    "name": "AIAD Templates (unofficial, not published by the brand)",
+    "domain": "aiad-templates.example",
+    "contact": "templates@aiad-templates.example"
+  },
+  "updated": "2026-10-12T12:00:00+08:00",
+  "offers": [
+    {
+      "id": "anker-prime-26k-300w",
+      "type": "product",
+      "category": "power_bank",
+      "title": "Anker Prime Power Bank (26K, 300W)",
+      "summary": "26,250 mAh (99.75 Wh) power bank, model A110A. Two USB-C ports up to 140 W each and one USB-A port up to 22.5 W, 300 W combined. Recharges at up to 250 W using both USB-C ports. Built-in display and app control.",
+      "url": "https://www.anker.com/ca/products/a1336-20000mah-power-bank",
+      "region": [
+        "CA"
+      ],
+      "price": {
+        "amount": "279.99",
+        "currency": "CAD",
+        "conditions": "Anker Canada list price read on 2026-10-12; power bank only, without charging base"
+      },
+      "specs": [
+        {
+          "name": "capacity_mah",
+          "value": 26250,
+          "unit": "mAh"
+        },
+        {
+          "name": "rated_energy_wh",
+          "value": 99.75,
+          "unit": "Wh"
+        },
+        {
+          "name": "max_total_output_w",
+          "value": 300,
+          "unit": "W"
+        },
+        {
+          "name": "usb_c_ports",
+          "value": 2
+        },
+        {
+          "name": "usb_c_max_output_w",
+          "value": 140,
+          "unit": "W"
+        },
+        {
+          "name": "usb_a_ports",
+          "value": 1
+        },
+        {
+          "name": "usb_a_max_output_w",
+          "value": 22.5,
+          "unit": "W"
+        },
+        {
+          "name": "max_input_w",
+          "value": 250,
+          "unit": "W"
+        },
+        {
+          "name": "weight_g",
+          "value": 600,
+          "unit": "g"
+        },
+        {
+          "name": "dimensions_mm",
+          "value": "159.9 x 38 x 62.7"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "300 W max total output; 140 W per USB-C port",
+          "level": "L1",
+          "evidence_url": "https://www.anker.com/ca/products/a1336-20000mah-power-bank"
+        },
+        {
+          "statement": "Rated 99.75 Wh, under the common 100 Wh carry-on limit",
+          "level": "L1",
+          "evidence_url": "https://www.anker.com/ca/products/b110a-anker-prime-26k-300w-power-bank-with-charging-base"
+        }
+      ],
+      "suitable_for": [
+        "Charging a laptop that accepts 140 W USB-C on the go",
+        "Charging a laptop and a phone at the same time",
+        "Air travellers who want high capacity while staying under 100 Wh"
+      ],
+      "not_suitable_for": [
+        "Anyone who wants a pocketable power bank: it weighs 600 g",
+        "Checked baggage: lithium power banks must go in carry-on luggage",
+        "Fast charging over USB-A: that port is limited to 22.5 W"
+      ],
+      "valid_from": "2026-10-12T00:00:00+08:00",
+      "valid_until": "2026-12-31T23:59:59+08:00",
+      "sponsorship": {
+        "paid": false
+      }
+    }
+  ]
+}

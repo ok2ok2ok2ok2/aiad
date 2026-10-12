@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/ok2ok2ok2ok2/aiad/main/schema/ai-reviews.schema.json",
+  "title": "AIAD 0.1 platform review file (draft)",
+  "type": "object",
+  "required": [
+    "aiad_reviews",
+    "platform",
+    "generated",
+    "items"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "aiad_reviews": {
+      "const": "0.1-draft"
+    },
+    "platform": {
+      "type": "string",
+      "format": "hostname"
+    },
+    "generated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/item"
+      }
+    }
+  },
+  "$defs": {
+    "item": {
+      "type": "object",
+      "required": [
+        "offer_ref",
+        "verified_purchase",
+        "unverified",
+        "editorial"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "offer_ref": {
+          "type": "object",
+          "required": [
+            "issuer_domain",
+            "offer_id"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "issuer_domain": {
+              "type": "string",
+              "format": "hostname"
+            },
+            "offer_id": {
+              "type": "string",
+              "pattern": "^[a-z0-9-]{1,64}$"
+            }
+          }
+        },
+        "verified_purchase": {
+          "type": "object",
+          "required": [
+            "count",
+            "weight",
+            "score"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "weight": {
+              "const": 1.0
+            },
+            "score": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 5
+            }
+          }
+        },
+        "unverified": {
+          "type": "object",
+          "required": [
+            "count",
+            "weight"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "weight": {
+              "const": 0.001
+            }
+          }
+        },
+        "editorial": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/editorial"
+          }
+        }
+      },
+      "if": {
+        "properties": {
+          "verified_purchase": {
+            "properties": {
+              "count": {
+                "const": 0
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "verified_purchase": {
+            "properties": {
+              "score": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      }
+    },
+    "editorial": {
+      "type": "object",
+      "required": [
+        "outlet",
+        "url",
+        "verdict",
+        "counts_toward_score"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "outlet": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "score": {
+          "type": "object",
+          "required": [
+            "value",
+            "scale"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "type": "number",
+              "minimum": 0
+            },
+            "scale": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          }
+        },
+        "verdict": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "pros": {
+          "type": "array",
+          "maxItems": 6,
+          "items": {
+            "type": "string",
+            "maxLength": 120
+          }
+        },
+        "cons": {
+          "type": "array",
+          "maxItems": 6,
+          "items": {
+            "type": "string",
+            "maxLength": 120
+          }
+        },
+        "counts_toward_score": {
+          "const": false
+        },
+        "retrieved": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    }
+  }
+}

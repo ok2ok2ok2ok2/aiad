@@ -1,0 +1,587 @@
+{
+  "aiad_reviews": "0.1-draft",
+  "platform": "aiad-templates.example",
+  "generated": "2026-10-12T14:00:00+08:00",
+  "items": [
+    {
+      "offer_ref": {
+        "issuer_domain": "aiad-templates.example",
+        "offer_id": "anker-prime-26k-300w"
+      },
+      "verified_purchase": {
+        "count": 0,
+        "weight": 1.0,
+        "score": null
+      },
+      "unverified": {
+        "count": 0,
+        "weight": 0.001
+      },
+      "editorial": [
+        {
+          "outlet": "Digital Camera World",
+          "url": "https://www.digitalcameraworld.com/tech/chargers-power-banks-and-batteries/anker-prime-power-bank-26k-300w-review",
+          "verdict": "Exceptionally powerful and well-designed; whether you can use the 140 W output depends on your devices, and many users may be better off with a slower, cheaper bank.",
+          "pros": [
+            "Can power two laptops at once",
+            "Detailed screen and Bluetooth app",
+            "Very fast to recharge"
+          ],
+          "cons": [
+            "Overkill for users who cannot use 300 W",
+            "Costs much more than normal power banks"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        },
+        {
+          "outlet": "The Star (UK)",
+          "url": "https://www.thestar.co.uk/recommended/anker-prime-power-bank-300w-charger-usb-c-battery-5495148",
+          "verdict": "Enormous power output, smart safety features and desktop dock support, at a premium price.",
+          "pros": [
+            "300 W combined, 140 W per USB-C port"
+          ],
+          "cons": [
+            "Premium price"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "offer_ref": {
+        "issuer_domain": "aiad-templates.example",
+        "offer_id": "apple-airpods-pro-3"
+      },
+      "verified_purchase": {
+        "count": 0,
+        "weight": 1.0,
+        "score": null
+      },
+      "unverified": {
+        "count": 0,
+        "weight": 0.001
+      },
+      "editorial": [
+        {
+          "outlet": "Digital Trends",
+          "url": "https://www.digitaltrends.com/home-theater/apple-airpods-pro-3-review/",
+          "score": {
+            "value": 7,
+            "scale": 10
+          },
+          "verdict": "A refined, more resilient flagship.",
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        },
+        {
+          "outlet": "Tom's Guide",
+          "url": "https://www.tomsguide.com/audio/airpods/airpods-pro-3-review",
+          "verdict": "The best AirPods you can buy right now.",
+          "pros": [
+            "Noise cancelling and transparency mode",
+            "Heart rate sensor"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        },
+        {
+          "outlet": "What Hi-Fi?",
+          "url": "https://www.whathifi.com/headphones/apple-airpods-pro-3",
+          "verdict": "Well-balanced, enjoyable and intuitive premium wireless earbuds, especially for iOS users.",
+          "cons": [
+            "No conventional equaliser",
+            "Features limited outside Apple devices"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "offer_ref": {
+        "issuer_domain": "aiad-templates.example",
+        "offer_id": "sony-wf-1000xm6"
+      },
+      "verified_purchase": {
+        "count": 0,
+        "weight": 1.0,
+        "score": null
+      },
+      "unverified": {
+        "count": 0,
+        "weight": 0.001
+      },
+      "editorial": [
+        {
+          "outlet": "What Hi-Fi?",
+          "url": "https://www.whathifi.com/headphones/wireless-earbuds/sony-wf-1000xm6",
+          "verdict": "An all-round performance good enough to worry every major rival at the money.",
+          "pros": [
+            "Natural, musical sound",
+            "Superb noise cancelling",
+            "Good call quality"
+          ],
+          "cons": [
+            "Limited ear tip options",
+            "Bulky case"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        },
+        {
+          "outlet": "TechRadar",
+          "url": "https://www.techradar.com/audio/earbuds-airpods/sony-wf-1000xm6-review",
+          "verdict": "Great sound and impressive features, but Sony is being overtaken on noise cancelling, calls and fit.",
+          "pros": [
+            "Expansive, neutral sound"
+          ],
+          "cons": [
+            "Noise cancelling better but not elite"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        },
+        {
+          "outlet": "RTINGS",
+          "url": "https://www.rtings.com/headphones/reviews/sony/wf-1000xm6",
+          "verdict": "Very good for sports and fitness, with strong noise isolation.",
+          "cons": [
+            "Bulkier design can pop out of smaller ears during runs",
+            "No battery improvement over the previous model",
+            "Build feels a little cheap"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "offer_ref": {
+        "issuer_domain": "aiad-templates.example",
+        "offer_id": "apple-iphone-18-pro"
+      },
+      "verified_purchase": {
+        "count": 0,
+        "weight": 1.0,
+        "score": null
+      },
+      "unverified": {
+        "count": 0,
+        "weight": 0.001
+      },
+      "editorial": [
+        {
+          "outlet": "Smartprix",
+          "url": "https://www.smartprix.com/bytes/apple-iphone-18-pro-review-a-familiar-iphone-with-some-welcome-upgrades/",
+          "score": {
+            "value": 8.8,
+            "scale": 10
+          },
+          "verdict": "Dependable compact flagship with strong battery life; a tough sell for iPhone 17 Pro owners.",
+          "pros": [
+            "Battery life",
+            "Variable-aperture main camera"
+          ],
+          "cons": [
+            "Price increase",
+            "Lens flare and ghosting",
+            "Weaker telephoto than some rivals"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        },
+        {
+          "outlet": "Expert Reviews",
+          "url": "https://www.expertreviews.co.uk/technology/phones/apple-iphone-18-pro-review",
+          "verdict": "Still a great phone; iPhone 17 Pro owners can skip it.",
+          "cons": [
+            "Conservative colour options"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        },
+        {
+          "outlet": "What Hi-Fi?",
+          "url": "https://www.whathifi.com/smartphones-tablets/smartphones/apple-iphone-18-pro",
+          "verdict": "A small improvement over its predecessor for movies and music, and a stunning portable AV device.",
+          "cons": [
+            "Entry price up by 100 GBP / 100 USD"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "offer_ref": {
+        "issuer_domain": "aiad-templates.example",
+        "offer_id": "samsung-galaxy-s26-ultra"
+      },
+      "verified_purchase": {
+        "count": 0,
+        "weight": 1.0,
+        "score": null
+      },
+      "unverified": {
+        "count": 0,
+        "weight": 0.001
+      },
+      "editorial": [
+        {
+          "outlet": "GSMArena",
+          "url": "https://www.gsmarena.com/samsung_galaxy_s26_ultra-review-2939p6.php",
+          "score": {
+            "value": 4.5,
+            "scale": 5
+          },
+          "verdict": "Highly rated flagship; review published 2026-03-06.",
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        },
+        {
+          "outlet": "Tom's Guide",
+          "url": "https://www.tomsguide.com/phones/samsung-phones/samsung-galaxy-s26-ultra-review",
+          "verdict": "The best Android phone yet, with a truly innovative and useful Privacy Display.",
+          "pros": [
+            "Privacy Display",
+            "Better low-light photos"
+          ],
+          "cons": [
+            "Large camera bump",
+            "No silicon-carbon battery",
+            "Narrower viewing angles than S25 Ultra"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        },
+        {
+          "outlet": "Digital Trends",
+          "url": "https://www.digitaltrends.com/phones/samsung-galaxy-s26-ultra-review/",
+          "verdict": "After four months of testing: pricey but justifiable, best for buyers who want consistency and long-term use.",
+          "cons": [
+            "Heat and throttling under load"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "offer_ref": {
+        "issuer_domain": "aiad-templates.example",
+        "offer_id": "anker-prime-charger-100w-3-ports"
+      },
+      "verified_purchase": {
+        "count": 0,
+        "weight": 1.0,
+        "score": null
+      },
+      "unverified": {
+        "count": 0,
+        "weight": 0.001
+      },
+      "editorial": [
+        {
+          "outlet": "Mighty Gadget",
+          "url": "https://mightygadget.com/?p=4246",
+          "verdict": "Compact, high-power charger that suits frequent travellers, but not the best value for a 100 W charger.",
+          "pros": [
+            "Very small for 100 W",
+            "Fold-down pins reduce damage when travelling"
+          ],
+          "cons": [
+            "More expensive than competing options"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "offer_ref": {
+        "issuer_domain": "aiad-templates.example",
+        "offer_id": "anker-nano-charger-45w-smart-display"
+      },
+      "verified_purchase": {
+        "count": 0,
+        "weight": 1.0,
+        "score": null
+      },
+      "unverified": {
+        "count": 0,
+        "weight": 0.001
+      },
+      "editorial": [
+        {
+          "outlet": "Digital Camera World",
+          "url": "https://www.digitalcameraworld.com/tech/phone-accessories/anker-nano-45w-smart-display-charger-review",
+          "verdict": "45 W is enough for most phones and tablets and keeps lighter laptops charged.",
+          "cons": [
+            "Limited device recognition",
+            "Only one port",
+            "UK/EU pins do not fold"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        },
+        {
+          "outlet": "TechRadar",
+          "url": "https://www.techradar.com/phones/phone-accessories/anker-nano-45w-smart-display-charger-review",
+          "verdict": "Charming, well-built and reliable.",
+          "pros": [
+            "Compact size"
+          ],
+          "cons": [
+            "Not the most powerful model",
+            "Single port"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        },
+        {
+          "outlet": "gstyle",
+          "url": "https://gstylemag.com/2026/01/21/anker-45w-smart-display-nano-charger-review/",
+          "score": {
+            "value": 8.5,
+            "scale": 10
+          },
+          "verdict": "Useful display and good thermals, but in testing it rarely reached 45 W.",
+          "pros": [
+            "Display",
+            "Thermals"
+          ],
+          "cons": [
+            "Rarely reached 45 W in testing",
+            "No cable included"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "offer_ref": {
+        "issuer_domain": "aiad-templates.example",
+        "offer_id": "apple-macbook-air-13-m5"
+      },
+      "verified_purchase": {
+        "count": 0,
+        "weight": 1.0,
+        "score": null
+      },
+      "unverified": {
+        "count": 0,
+        "weight": 0.001
+      },
+      "editorial": [
+        {
+          "outlet": "TechRadar",
+          "url": "https://www.techradar.com/computing/macbooks/apple-macbook-air-13-inch-m5-review",
+          "verdict": "A strong mix of design, near-pro performance and battery life in an ultraportable.",
+          "cons": [
+            "No new colours",
+            "Higher price"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        },
+        {
+          "outlet": "Tom's Hardware",
+          "url": "https://tomshardware.com/laptops/macbooks/apple-macbook-air-13-inch-m5-review",
+          "verdict": "Editor's Choice; a good Mac laptop for most people.",
+          "cons": [
+            "Display notch remains",
+            "Starting price rose"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        },
+        {
+          "outlet": "Notebookcheck",
+          "url": "https://www.notebookcheck.net/Insane-performance-and-efficiency-without-fans-Apple-MacBook-Air-13-M5-Entry-Review.1242707.0.html",
+          "verdict": "Excellent laptop for many people; multi-core performance drops after a few minutes because of thermal limits.",
+          "cons": [
+            "Throttles under sustained multi-core load"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "offer_ref": {
+        "issuer_domain": "aiad-templates.example",
+        "offer_id": "dell-xps-14-2026"
+      },
+      "verified_purchase": {
+        "count": 0,
+        "weight": 1.0,
+        "score": null
+      },
+      "unverified": {
+        "count": 0,
+        "weight": 0.001
+      },
+      "editorial": [
+        {
+          "outlet": "TweakTown",
+          "url": "https://tweaktown.com/reviews/11509/dell-xps-14-2026-laptop-premium-quality-impressive-performance/index.html",
+          "score": {
+            "value": 86,
+            "scale": 100
+          },
+          "verdict": "One of the more impressive thin and light premium designs of the year.",
+          "pros": [
+            "Intel Panther Lake performance",
+            "Tandem OLED display"
+          ],
+          "cons": [
+            "No USB-A or HDMI",
+            "High price"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        },
+        {
+          "outlet": "T3",
+          "url": "https://www.t3.com/tech/laptops/dell-xps-14-review-2026",
+          "verdict": "Platinum Award; one of the slickest Windows laptops of the year.",
+          "cons": [
+            "No HDMI",
+            "No SD slot",
+            "High price"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        },
+        {
+          "outlet": "Tom's Hardware",
+          "url": "https://www.tomshardware.com/laptops/dell-xps-14-2026-da14260-review",
+          "verdict": "A vast improvement over the previous generation, with strong battery life on the 1920 x 1200 model.",
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "offer_ref": {
+        "issuer_domain": "aiad-templates.example",
+        "offer_id": "apple-watch-series-12"
+      },
+      "verified_purchase": {
+        "count": 0,
+        "weight": 1.0,
+        "score": null
+      },
+      "unverified": {
+        "count": 0,
+        "weight": 0.001
+      },
+      "editorial": [
+        {
+          "outlet": "Tom's Guide",
+          "url": "https://www.tomsguide.com/wellness/smartwatches/apple-watch-series-12-review",
+          "verdict": "Editor's Choice; new heart rate sensor and readiness score.",
+          "pros": [
+            "More accurate heart rate sensor",
+            "Readiness score"
+          ],
+          "cons": [
+            "Same 24-hour battery life",
+            "Same design and display"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        },
+        {
+          "outlet": "T3",
+          "url": "https://www.t3.com/tech/smartwatches/apple-watch-series-12-review",
+          "verdict": "Good heart-rate tracking, recovery features and charging; many additions feel like catch-up.",
+          "cons": [
+            "Battery life unchanged",
+            "Limited gesture controls"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        },
+        {
+          "outlet": "Macworld",
+          "url": "https://www.macworld.com/article/3249459/apple-watch-series-12-review.html",
+          "verdict": "Not bad, but could do better.",
+          "pros": [
+            "Health and fitness features"
+          ],
+          "cons": [
+            "Inconsistent battery life and charging speed",
+            "Occasional sluggishness",
+            "Two flagship features delayed"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "offer_ref": {
+        "issuer_domain": "aiad-templates.example",
+        "offer_id": "samsung-galaxy-watch8"
+      },
+      "verified_purchase": {
+        "count": 0,
+        "weight": 1.0,
+        "score": null
+      },
+      "unverified": {
+        "count": 0,
+        "weight": 0.001
+      },
+      "editorial": [
+        {
+          "outlet": "Digital Citizen",
+          "url": "https://www.digitalcitizen.life/samsung-galaxy-watch8-review/",
+          "score": {
+            "value": 4,
+            "scale": 5
+          },
+          "verdict": "A strong pick for people already using Samsung devices.",
+          "cons": [
+            "Charging could be faster",
+            "No Wi-Fi 6 or 7"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        },
+        {
+          "outlet": "Notebookcheck",
+          "url": "https://www.notebookcheck.net/Brighter-and-slimmer-Samsung-Galaxy-Watch8-LTE-Smartwatch-review.1121005.0.html",
+          "verdict": "Very bright display; daily charging needed with all features on.",
+          "pros": [
+            "Very bright display"
+          ],
+          "cons": [
+            "Daily charging",
+            "Blood pressure and ECG work only with a Samsung phone"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        },
+        {
+          "outlet": "Expert Reviews",
+          "url": "https://www.expertreviews.co.uk/beauty-wellness/wearables/samsung-galaxy-watch-8-review",
+          "verdict": "A desirable but flawed Wear OS smartwatch.",
+          "pros": [
+            "Slim and light"
+          ],
+          "cons": [
+            "Running Coach feels half-baked",
+            "Needs a tight fit for accurate heart rate"
+          ],
+          "counts_toward_score": false,
+          "retrieved": "2026-10-12"
+        }
+      ]
+    }
+  ]
+}

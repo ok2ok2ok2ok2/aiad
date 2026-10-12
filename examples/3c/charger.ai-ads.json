@@ -1,0 +1,164 @@
+{
+  "aiad": "0.1",
+  "issuer": {
+    "name": "AIAD Templates (unofficial, not published by the brand)",
+    "domain": "aiad-templates.example",
+    "contact": "templates@aiad-templates.example"
+  },
+  "updated": "2026-10-12T12:00:00+08:00",
+  "offers": [
+    {
+      "id": "anker-prime-charger-100w-3-ports",
+      "type": "product",
+      "category": "usb_c_charger",
+      "title": "Anker Prime Charger (100W, 3 Ports, GaN)",
+      "summary": "GaN wall charger, model A2688, with two USB-C ports up to 100 W and one USB-A port up to 22.5 W. 100 W total with one or two ports in use, 89 W with all three. 43.5 x 29 x 67.8 mm, 170 g.",
+      "url": "https://www.anker.com/products/a2688-anker-prime-charger-100w-3-ports-gan",
+      "region": [
+        "US"
+      ],
+      "price": {
+        "amount": "69.99",
+        "currency": "USD",
+        "conditions": "Anker US list price read on 2026-10-12; charger only"
+      },
+      "specs": [
+        {
+          "name": "max_total_output_w",
+          "value": 100,
+          "unit": "W"
+        },
+        {
+          "name": "all_ports_total_w",
+          "value": 89,
+          "unit": "W"
+        },
+        {
+          "name": "usb_c_ports",
+          "value": 2
+        },
+        {
+          "name": "usb_c_max_output_w",
+          "value": 100,
+          "unit": "W"
+        },
+        {
+          "name": "usb_a_ports",
+          "value": 1
+        },
+        {
+          "name": "usb_a_max_output_w",
+          "value": 22.5,
+          "unit": "W"
+        },
+        {
+          "name": "weight_g",
+          "value": 170,
+          "unit": "g"
+        },
+        {
+          "name": "dimensions_mm",
+          "value": "43.5 x 29 x 67.8"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "Up to 100 W from one USB-C port; 89 W total with three ports in use",
+          "level": "L1",
+          "evidence_url": "https://www.anker.com/products/a2688-anker-prime-charger-100w-3-ports-gan"
+        }
+      ],
+      "suitable_for": [
+        "Charging one laptop that accepts 100 W USB-C",
+        "Charging a laptop and a phone from one wall socket"
+      ],
+      "not_suitable_for": [
+        "Laptops that need more than 100 W",
+        "Getting the full 100 W while three devices charge: the total drops to 89 W"
+      ],
+      "valid_from": "2026-10-12T00:00:00+08:00",
+      "valid_until": "2026-12-31T23:59:59+08:00",
+      "sponsorship": {
+        "paid": false
+      }
+    },
+    {
+      "id": "anker-nano-charger-45w-smart-display",
+      "type": "product",
+      "category": "usb_c_charger",
+      "title": "Anker Nano Charger (45W, Smart Display)",
+      "summary": "Compact USB-C charger, model A121D, up to 45 W (20 V 2.25 A). Built-in display that rotates 180 degrees, foldable prongs. 34 x 35.5 x 40 mm, 75 g. No cable in the box.",
+      "url": "https://www.anker.com/ca/products/a121d-45w-usb-c-fast-charger-foldable-plug-compact-2-pack",
+      "region": [
+        "CA"
+      ],
+      "price": {
+        "amount": "99.98",
+        "currency": "CAD",
+        "conditions": "Anker Canada list price for a 2-pack, read on 2026-10-12; no single-unit price on that page"
+      },
+      "specs": [
+        {
+          "name": "max_total_output_w",
+          "value": 45,
+          "unit": "W"
+        },
+        {
+          "name": "usb_c_max_output_w",
+          "value": 45,
+          "unit": "W"
+        },
+        {
+          "name": "input_rating",
+          "value": "100-240V~ 50/60Hz, 1.5A Max"
+        },
+        {
+          "name": "weight_g",
+          "value": 75,
+          "unit": "g"
+        },
+        {
+          "name": "dimensions_mm",
+          "value": "34 x 35.5 x 40"
+        },
+        {
+          "name": "foldable_plug",
+          "value": true
+        },
+        {
+          "name": "display",
+          "value": true
+        },
+        {
+          "name": "cable_included",
+          "value": false
+        }
+      ],
+      "claims": [
+        {
+          "statement": "45 W max output (5V 3A / 9V 3A / 15V 3A / 20V 2.25A)",
+          "level": "L1",
+          "evidence_url": "https://www.anker.com/ca/products/a121d-45w-usb-c-fast-charger-foldable-plug-compact-2-pack"
+        },
+        {
+          "statement": "Does not include a charging cable",
+          "level": "L1",
+          "evidence_url": "https://www.anker.com/ca/products/a121d-45w-usb-c-fast-charger-foldable-plug-compact-2-pack"
+        }
+      ],
+      "suitable_for": [
+        "Phones and tablets, and light laptops that accept 45 W",
+        "Travellers who want a small charger with foldable prongs"
+      ],
+      "not_suitable_for": [
+        "Laptops that need more than 45 W",
+        "Buyers who expect a cable in the box: none is included"
+      ],
+      "valid_from": "2026-10-12T00:00:00+08:00",
+      "valid_until": "2026-12-31T23:59:59+08:00",
+      "sponsorship": {
+        "paid": false
+      }
+    }
+  ]
+}

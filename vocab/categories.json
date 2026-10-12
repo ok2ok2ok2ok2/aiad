@@ -1,0 +1,432 @@
+{
+  "aiad_categories": "0.1-draft",
+  "note": "Canonical spec keys and standard test protocols. A result produced with a protocol below, by a named third party, may be published as an L2 claim citing the protocol id.",
+  "categories": {
+    "power_bank": {
+      "specs": {
+        "capacity_mah": {
+          "unit": "mAh",
+          "type": "number",
+          "desc": "Rated cell capacity (usually at 3.6-3.85 V)"
+        },
+        "rated_energy_wh": {
+          "unit": "Wh",
+          "type": "number",
+          "desc": "Rated energy printed on the product; airlines use this figure"
+        },
+        "max_total_output_w": {
+          "unit": "W",
+          "type": "number",
+          "desc": "Max combined output across all ports"
+        },
+        "usb_c_ports": {
+          "type": "number"
+        },
+        "usb_c_max_output_w": {
+          "unit": "W",
+          "type": "number",
+          "desc": "Max output of the strongest single USB-C port"
+        },
+        "usb_a_ports": {
+          "type": "number"
+        },
+        "usb_a_max_output_w": {
+          "unit": "W",
+          "type": "number"
+        },
+        "max_input_w": {
+          "unit": "W",
+          "type": "number",
+          "desc": "Max recharge power"
+        },
+        "weight_g": {
+          "unit": "g",
+          "type": "number"
+        },
+        "dimensions_mm": {
+          "type": "string",
+          "desc": "L x W x H"
+        }
+      },
+      "tests": {
+        "pb-usable-energy-20v": {
+          "measures": "Usable energy delivered at 20 V / 3 A until cut-off",
+          "unit": "Wh",
+          "method": "Charge to 100% and rest 1 h at 25 C. Discharge through an electronic load at 20 V 3 A on the strongest USB-C port. Report delivered Wh and efficiency = delivered / rated_energy_wh."
+        },
+        "pb-usable-energy-5v": {
+          "measures": "Usable energy delivered at 5 V / 2 A until cut-off",
+          "unit": "Wh",
+          "method": "Same as pb-usable-energy-20v at 5 V 2 A. Phone-charging scenario."
+        },
+        "pb-sustained-max": {
+          "measures": "Whether max_total_output_w holds for 10 minutes",
+          "unit": "W",
+          "method": "Load every port at its advertised max simultaneously for 10 min. Report the lowest 1-minute average and max surface temperature (C)."
+        },
+        "pb-recharge-time": {
+          "measures": "Time from 0% to 100% at max_input_w",
+          "unit": "min",
+          "method": "Recharge with a charger able to supply max_input_w. Report minutes to 80% and to 100%."
+        }
+      }
+    },
+    "true_wireless_earbuds": {
+      "specs": {
+        "battery_anc_on_h": {
+          "unit": "h",
+          "type": "number",
+          "desc": "Manufacturer-rated playback per charge, ANC on"
+        },
+        "battery_with_case_anc_on_h": {
+          "unit": "h",
+          "type": "number"
+        },
+        "quick_charge": {
+          "type": "string"
+        },
+        "ingress_rating": {
+          "type": "string",
+          "desc": "IEC 60529 code, e.g. IP57, IPX4"
+        },
+        "earbud_weight_g": {
+          "unit": "g",
+          "type": "number"
+        },
+        "case_weight_g": {
+          "unit": "g",
+          "type": "number"
+        },
+        "bluetooth_version": {
+          "type": "string"
+        },
+        "codecs": {
+          "type": "string"
+        },
+        "multipoint": {
+          "type": "boolean"
+        },
+        "driver_mm": {
+          "unit": "mm",
+          "type": "number"
+        },
+        "case_charging": {
+          "type": "string"
+        },
+        "heart_rate_sensor": {
+          "type": "boolean"
+        }
+      },
+      "tests": {
+        "tws-battery-anc-75db": {
+          "measures": "Playback time per charge, ANC on",
+          "unit": "h",
+          "method": "Pink-noise-calibrated music playlist at 75 dB SPL measured on an ear simulator, ANC on, default EQ, connected to a reference phone 1 m away. Run until shutdown. Report median of 3 runs."
+        },
+        "tws-anc-attenuation": {
+          "measures": "Noise reduction in three bands",
+          "unit": "dB",
+          "method": "Ear simulator in a diffuse pink-noise field at 85 dB SPL. Report attenuation for 50-200 Hz, 200-1000 Hz and 1-4 kHz with the medium ear tips."
+        },
+        "tws-latency": {
+          "measures": "Audio latency in default mode",
+          "unit": "ms",
+          "method": "Click track played from a reference phone; measure output delay with a microphone. Report for each platform tested (iOS, Android)."
+        }
+      }
+    },
+    "smartphone": {
+      "specs": {
+        "display_in": {
+          "unit": "in",
+          "type": "number"
+        },
+        "display_resolution": {
+          "type": "string"
+        },
+        "refresh_rate_max_hz": {
+          "unit": "Hz",
+          "type": "number"
+        },
+        "chip": {
+          "type": "string"
+        },
+        "storage_options_gb": {
+          "type": "string"
+        },
+        "battery_mah": {
+          "unit": "mAh",
+          "type": "number"
+        },
+        "weight_g": {
+          "unit": "g",
+          "type": "number"
+        },
+        "ingress_rating": {
+          "type": "string"
+        },
+        "video_playback_h": {
+          "unit": "h",
+          "type": "number",
+          "desc": "Manufacturer-rated video playback"
+        },
+        "wireless_charging_max_w": {
+          "unit": "W",
+          "type": "number"
+        },
+        "fast_charge": {
+          "type": "string"
+        },
+        "usb": {
+          "type": "string"
+        },
+        "rear_cameras": {
+          "type": "string"
+        },
+        "main_camera_mp": {
+          "unit": "MP",
+          "type": "number"
+        },
+        "telephoto": {
+          "type": "string"
+        }
+      },
+      "tests": {
+        "ph-battery-web-200nits": {
+          "measures": "Web-browsing battery life",
+          "unit": "h",
+          "method": "Screen at 200 nits, max refresh rate, Wi-Fi on, loop a fixed set of 20 web pages every 30 s from 100% until shutdown. Report median of 2 runs."
+        },
+        "ph-charge-0-100": {
+          "measures": "Wired charging time",
+          "unit": "min",
+          "method": "From shutdown at 0%, charge with the fastest charger the manufacturer sells for this model. Report minutes to 50%, 80% and 100%, and the charger used."
+        },
+        "ph-sustained-performance": {
+          "measures": "Performance stability under long load",
+          "unit": "%",
+          "method": "Run a GPU stress loop for 20 min at 25 C ambient. Report lowest-loop score / best-loop score, and max back temperature (C)."
+        },
+        "ph-peak-brightness": {
+          "measures": "Full-screen peak brightness",
+          "unit": "nits",
+          "method": "Auto-brightness on, phone under strong light, measure a 100% white full-screen pattern with a colorimeter."
+        }
+      }
+    },
+    "usb_c_charger": {
+      "specs": {
+        "max_total_output_w": {
+          "unit": "W",
+          "type": "number",
+          "desc": "Max combined output when one or two ports are used"
+        },
+        "all_ports_total_w": {
+          "unit": "W",
+          "type": "number",
+          "desc": "Max combined output with every port in use"
+        },
+        "usb_c_ports": {
+          "type": "number"
+        },
+        "usb_c_max_output_w": {
+          "unit": "W",
+          "type": "number",
+          "desc": "Max output of the strongest single USB-C port"
+        },
+        "usb_a_ports": {
+          "type": "number"
+        },
+        "usb_a_max_output_w": {
+          "unit": "W",
+          "type": "number"
+        },
+        "input_rating": {
+          "type": "string"
+        },
+        "weight_g": {
+          "unit": "g",
+          "type": "number"
+        },
+        "dimensions_mm": {
+          "type": "string",
+          "desc": "L x W x H, prongs excluded"
+        },
+        "foldable_plug": {
+          "type": "boolean"
+        },
+        "display": {
+          "type": "boolean"
+        },
+        "cable_included": {
+          "type": "boolean"
+        }
+      },
+      "tests": {
+        "chg-sustained-max": {
+          "measures": "Whether max_total_output_w holds for 30 minutes",
+          "unit": "W",
+          "method": "At 25 C ambient, load the strongest USB-C port with an electronic load at its advertised max for 30 min. Report the lowest 1-minute average and max surface temperature (C)."
+        },
+        "chg-port-split": {
+          "measures": "Actual power per port with every port loaded",
+          "unit": "W",
+          "method": "Connect a PD-trigger load to every port, each requesting its advertised max. Report negotiated W per port and the total after 5 minutes."
+        },
+        "chg-efficiency": {
+          "measures": "Wall-to-output efficiency at full load",
+          "unit": "%",
+          "method": "Measure AC input power with a calibrated meter and DC output at max_total_output_w. Report output / input."
+        },
+        "chg-protocol-support": {
+          "measures": "Fast-charge protocols actually negotiated",
+          "unit": "list",
+          "method": "Probe each port with a USB PD / PPS / QC analyser. Report every PD fixed and PPS profile offered per port."
+        }
+      }
+    },
+    "laptop": {
+      "specs": {
+        "chip": {
+          "type": "string"
+        },
+        "display_in": {
+          "unit": "in",
+          "type": "number"
+        },
+        "display_resolution": {
+          "type": "string"
+        },
+        "refresh_rate_max_hz": {
+          "unit": "Hz",
+          "type": "number"
+        },
+        "display_brightness_nits": {
+          "unit": "nits",
+          "type": "number",
+          "desc": "Manufacturer-rated brightness"
+        },
+        "memory_options": {
+          "type": "string"
+        },
+        "storage_options": {
+          "type": "string"
+        },
+        "battery_wh": {
+          "unit": "Wh",
+          "type": "number"
+        },
+        "battery_video_h": {
+          "unit": "h",
+          "type": "number",
+          "desc": "Manufacturer-rated video playback"
+        },
+        "battery_web_h": {
+          "unit": "h",
+          "type": "number",
+          "desc": "Manufacturer-rated wireless web"
+        },
+        "weight_kg": {
+          "unit": "kg",
+          "type": "number"
+        },
+        "thunderbolt_ports": {
+          "type": "number"
+        },
+        "ports": {
+          "type": "string"
+        },
+        "charger_included": {
+          "type": "string"
+        }
+      },
+      "tests": {
+        "lt-battery-web-150nits": {
+          "measures": "Web-browsing battery life",
+          "unit": "h",
+          "method": "Screen at 150 nits, Wi-Fi on, default power mode, loop a fixed set of 20 web pages every 30 s from 100% until shutdown. Report median of 2 runs."
+        },
+        "lt-sustained-cpu": {
+          "measures": "CPU performance stability under long load",
+          "unit": "%",
+          "method": "Run a multi-core CPU benchmark in a loop for 30 min at 25 C ambient on mains power. Report lowest-run score / first-run score."
+        },
+        "lt-surface-temp": {
+          "measures": "Hottest keyboard-deck temperature under load",
+          "unit": "C",
+          "method": "During lt-sustained-cpu, measure the keyboard deck and underside on a fixed 9-point grid with a thermal camera. Report the max."
+        },
+        "lt-display-measured": {
+          "measures": "Measured full-screen brightness",
+          "unit": "nits",
+          "method": "Max manual brightness, SDR, 100% white full screen, measured with a colorimeter at screen centre."
+        }
+      }
+    },
+    "smartwatch": {
+      "specs": {
+        "case_sizes_mm": {
+          "type": "string"
+        },
+        "battery_h": {
+          "unit": "h",
+          "type": "number",
+          "desc": "Manufacturer-rated normal use"
+        },
+        "battery_low_power_h": {
+          "unit": "h",
+          "type": "number"
+        },
+        "water_resistance": {
+          "type": "string"
+        },
+        "dust_rating": {
+          "type": "string"
+        },
+        "display_peak_nits": {
+          "unit": "nits",
+          "type": "number"
+        },
+        "sensors": {
+          "type": "string"
+        },
+        "bluetooth_version": {
+          "type": "string"
+        },
+        "weight_g": {
+          "unit": "g",
+          "type": "number",
+          "desc": "Case only, largest aluminium GPS model unless stated"
+        },
+        "fast_charge": {
+          "type": "string"
+        },
+        "phone_compatibility": {
+          "type": "string"
+        }
+      },
+      "tests": {
+        "sw-battery-real-use": {
+          "measures": "Battery life in a fixed mixed-use day",
+          "unit": "h",
+          "method": "Paired phone nearby, always-on display on, 100 notifications/day, 30 min GPS workout and sleep tracking per 24 h. Run from 100% until shutdown."
+        },
+        "sw-hr-accuracy": {
+          "measures": "Heart-rate error against a chest strap",
+          "unit": "%",
+          "method": "30 min interval run; compare 1 s samples with an ECG chest strap. Report mean absolute percentage error."
+        },
+        "sw-gps-distance": {
+          "measures": "GPS distance error on a measured course",
+          "unit": "%",
+          "method": "Run a certified 5 km course 3 times without a phone. Report mean absolute distance error."
+        },
+        "sw-charge-0-80": {
+          "measures": "Charging time from 0% to 80%",
+          "unit": "min",
+          "method": "Use the charger supplied or recommended by the manufacturer. Report minutes to 80% and to 100%."
+        }
+      }
+    }
+  }
+}

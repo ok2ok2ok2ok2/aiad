@@ -1,0 +1,157 @@
+{
+  "aiad": "0.1",
+  "issuer": {
+    "name": "AIAD Templates (unofficial, not published by the brand)",
+    "domain": "aiad-templates.example",
+    "contact": "templates@aiad-templates.example"
+  },
+  "updated": "2026-10-12T12:00:00+08:00",
+  "offers": [
+    {
+      "id": "apple-watch-series-12",
+      "type": "product",
+      "category": "smartwatch",
+      "title": "Apple Watch Series 12",
+      "summary": "Smartwatch in 42 mm and 46 mm. Up to 24 h normal use, 38 h in Low Power Mode, up to 80% in about 30 min. Water resistant to 50 m (ISO 22810:2010), IP6X. ECG, blood oxygen and temperature sensors. Requires iPhone 11 or later with iOS 27.",
+      "url": "https://www.apple.com/apple-watch-series-12/specs/",
+      "region": [
+        "US"
+      ],
+      "specs": [
+        {
+          "name": "case_sizes_mm",
+          "value": "42 / 46"
+        },
+        {
+          "name": "battery_h",
+          "value": 24,
+          "unit": "h"
+        },
+        {
+          "name": "battery_low_power_h",
+          "value": 38,
+          "unit": "h"
+        },
+        {
+          "name": "water_resistance",
+          "value": "50 m, ISO 22810:2010"
+        },
+        {
+          "name": "dust_rating",
+          "value": "IP6X"
+        },
+        {
+          "name": "display_peak_nits",
+          "value": 2000,
+          "unit": "nits"
+        },
+        {
+          "name": "sensors",
+          "value": "ECG, optical heart, blood oxygen, temperature, depth gauge to 6 m"
+        },
+        {
+          "name": "bluetooth_version",
+          "value": "5.3"
+        },
+        {
+          "name": "weight_g",
+          "value": 39.5,
+          "unit": "g"
+        },
+        {
+          "name": "fast_charge",
+          "value": "up to 80% in about 30 min"
+        },
+        {
+          "name": "phone_compatibility",
+          "value": "iPhone 11 or later with iOS 27 or later"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "Up to 24 hours normal use and 38 hours in Low Power Mode",
+          "level": "L1",
+          "evidence_url": "https://www.apple.com/apple-watch-series-12/specs/"
+        },
+        {
+          "statement": "Water resistant to 50 m under ISO 22810:2010; IP6X dust",
+          "level": "L1",
+          "evidence_url": "https://www.apple.com/apple-watch-series-12/specs/"
+        }
+      ],
+      "suitable_for": [
+        "iPhone users who want ECG and blood oxygen readings on the wrist",
+        "Swimmers who want a water-resistant watch"
+      ],
+      "not_suitable_for": [
+        "Android phone users: it requires an iPhone 11 or later",
+        "People who want several days per charge: rated 24 hours of normal use"
+      ],
+      "valid_from": "2026-10-12T00:00:00+08:00",
+      "valid_until": "2026-12-31T23:59:59+08:00",
+      "sponsorship": {
+        "paid": false
+      }
+    },
+    {
+      "id": "samsung-galaxy-watch8",
+      "type": "product",
+      "category": "smartwatch",
+      "title": "Samsung Galaxy Watch8",
+      "summary": "Smartwatch in 40 mm and 44 mm with a 3000-nit display. ECG, irregular-rhythm alerts, sleep apnea detection, cuff-calibrated blood pressure and body composition. Pairs with Android 11 or later phones with at least 1.5 GB memory.",
+      "url": "https://www.samsung.com/us/watches/galaxy-watch8/",
+      "region": [
+        "US"
+      ],
+      "price": {
+        "amount": "299.99",
+        "currency": "USD",
+        "conditions": "Samsung US starting price before trade-in, read on 2026-10-12"
+      },
+      "specs": [
+        {
+          "name": "case_sizes_mm",
+          "value": "40 / 44"
+        },
+        {
+          "name": "display_peak_nits",
+          "value": 3000,
+          "unit": "nits"
+        },
+        {
+          "name": "sensors",
+          "value": "ECG, irregular rhythm alerts, sleep apnea detection, blood pressure (cuff calibration), BIA body composition"
+        },
+        {
+          "name": "phone_compatibility",
+          "value": "Android 11.0 or above, minimum 1.5 GB memory"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "3000-nit display",
+          "level": "L1",
+          "evidence_url": "https://www.samsung.com/us/watches/galaxy-watch8/"
+        },
+        {
+          "statement": "Blood pressure readings require calibration with a cuff",
+          "level": "L1",
+          "evidence_url": "https://www.samsung.com/us/watches/galaxy-watch8/"
+        }
+      ],
+      "suitable_for": [
+        "Android phone users who want ECG and sleep apnea detection",
+        "Reading the screen in bright sunlight"
+      ],
+      "not_suitable_for": [
+        "iPhone users: Samsung states it must be paired with an Android 11 or later phone",
+        "Blood pressure tracking without a cuff: readings need cuff calibration"
+      ],
+      "valid_from": "2026-10-12T00:00:00+08:00",
+      "valid_until": "2026-12-31T23:59:59+08:00",
+      "sponsorship": {
+        "paid": false
+      }
+    }
+  ]
+}

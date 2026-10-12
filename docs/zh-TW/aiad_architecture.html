@@ -1,0 +1,148 @@
+<title>AIAD 架構流程</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: 單欄；總覽圖在上，下面五條流程各一張小圖＋一句話；最後是 AI 閱讀版 JSON */
+:root{
+  --bg:#f4f5f7; --surface:#ffffff; --ink:#1c2230; --muted:#5e6778; --line:#dde1e8;
+  --accent:#2f5bd3; --code-bg:#eef0f4;
+  --f-body:"Noto Sans TC","Microsoft JhengHei","PingFang TC",sans-serif;
+  --f-mono:"JetBrains Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#12151c; --surface:#1a1f29; --ink:#e3e7ef; --muted:#9aa3b5; --line:#2c3342; --accent:#86a6ff; --code-bg:#11141a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12151c; --surface:#1a1f29; --ink:#e3e7ef; --muted:#9aa3b5; --line:#2c3342; --accent:#86a6ff; --code-bg:#11141a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.7}
+.wrap{max-width:920px;margin:0 auto;padding-inline:16px;padding-block:28px 64px;display:grid;gap:18px}
+h1{font-size:clamp(24px,4vw,32px);margin:0}
+.lede{color:var(--muted);margin:6px 0 0}
+h2{font-size:20px;margin:22px 0 0;padding-bottom:6px;border-bottom:2px solid var(--line)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 18px;min-width:0}
+.panel h3{margin:0 0 6px;font-size:17px}
+.panel p{margin:0 0 10px}
+.diagram{overflow-x:auto}
+pre.mermaid{background:transparent;margin:0;text-align:center}
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px 16px;font-size:14px;margin:0;padding:0;list-style:none}
+.legend b{font-family:var(--f-mono);color:var(--accent);margin-right:6px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:8px}
+details summary{cursor:pointer;padding:12px 16px;font-weight:500}
+details summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+details pre{font-family:var(--f-mono);font-size:12.5px;line-height:1.55;background:var(--code-bg);border-radius:6px;margin:0 12px 12px;padding:12px 14px;overflow-x:auto}
+.note{font-size:14px;color:var(--muted)}
+</style>
+
+<div class="wrap">
+<header>
+  <h1>AIAD 架構流程</h1>
+  <p class="lede">商家把資料交出來，平台驗證、整理並附上評價，AI 助理查詢後老實告訴人。上半部是給人看的流程圖，最下面是同一份架構的 AI 閱讀版。</p>
+</header>
+
+<h2>總覽</h2>
+<div class="panel diagram">
+<pre class="mermaid">
+flowchart LR
+  M["商家"] -->|"放檔案"| F["/.well-known/ai-ads.json"]
+  F -->|"抓取"| C["爬蟲"]
+  C --> V{"檢查工具"}
+  V -->|"不合格：整份拒收"| M
+  V -->|"合格"| I[("索引")]
+  M -->|"唯讀授權"| O["訂單串接<br/>Shopify / Stripe"]
+  O -->|"每筆訂單都邀請"| B["買家"]
+  B -->|"有購買證明 ×1.0"| R[("評價庫")]
+  X["沒有購買證明"] -.->|"×0.001 只算筆數"| R
+  E["媒體評測"] -.->|"列出，不算分"| R
+  A["異常偵測"] -->|"調降權重"| R
+  T["實測單位"] -->|"標準實測 → L2"| I
+  U["使用者"] -->|"提問"| G["AI 助理"]
+  G -->|"MCP / API 查詢"| Q["查詢介面"]
+  I --> Q
+  R --> Q
+  Q -->|"資料＋分數＋證據等級＋贊助標示"| G
+  G -->|"照規則 A1–A6 回答"| U
+  S["神秘客測試"] -.->|"抽查守不守規則"| G
+</pre>
+</div>
+
+<div class="panel">
+  <h3>三種分數</h3>
+  <ul class="legend">
+    <li><b>S1</b>商品評價：只算有購買證明的評價</li>
+    <li><b>S2</b>商家資料可信度：被查證「與描述不符」就扣</li>
+    <li><b>S3</b>AI 守規分數：神秘客抽查，扣在 AI 的主人身上</li>
+  </ul>
+</div>
+
+<h2>五條流程</h2>
+
+<div class="panel">
+  <h3>1. 發佈：商家資料怎麼進來</h3>
+  <p>商家把檔案放在自己網站，平台定期抓下來檢查。只要有一處不合格，例如偷塞給 AI 的指令，整份都不收。</p>
+  <div class="diagram"><pre class="mermaid">
+flowchart LR
+  M["商家寫檔案"] --> F["放在自己網域"] --> C["平台抓取"] --> V{"檢查"}
+  V -->|"合格"| I[("進索引")]
+  V -->|"不合格"| N["整份拒收，通知商家"]
+  </pre></div>
+</div>
+
+<div class="panel">
+  <h3>2. 評價：分數怎麼算</h3>
+  <p>邀請由平台直接發給每一筆訂單的買家，商家挑不了人。有購買證明的評價也要經過異常偵測。</p>
+  <div class="diagram"><pre class="mermaid">
+flowchart LR
+  M["商家唯讀授權訂單"] --> O["平台讀訂單"] --> B["每位買家都收到邀請"] --> R["寫評價 ×1.0"]
+  R --> A{"異常偵測"} --> S1["S1 商品評價"]
+  B -->|"回報與描述不符，查證屬實"| S2["S2 扣分"]
+  </pre></div>
+</div>
+
+<div class="panel">
+  <h3>3. 回答：AI 怎麼告訴人</h3>
+  <p>AI 用條件查詢，拿回資料、分數、證據等級和贊助標示，回答時一定要照規則標示。</p>
+  <div class="diagram"><pre class="mermaid">
+flowchart LR
+  U["使用者提問"] --> G["AI 助理"] --> Q["查詢：規格、地區、價格、適合誰"]
+  Q --> D["回傳：資料、S1、S2、媒體評測、證據等級、是否贊助"]
+  D --> G2["AI 回答：標贊助、付費不影響排序、講出不適合的地方"] --> U2["使用者"]
+  </pre></div>
+</div>
+
+<div class="panel">
+  <h3>4. 稽核：抓不守規則的 AI</h3>
+  <p>平台定期拿測試問題去問各家 AI，檢查有沒有守 A1–A6，結果公開排名。</p>
+  <div class="diagram"><pre class="mermaid">
+flowchart LR
+  S["神秘客出測試題"] --> G["各家 AI 回答"] --> J{"守規則？"} --> S3["S3 公開排名"]
+  </pre></div>
+</div>
+
+<div class="panel">
+  <h3>5. 實測：懂車帝式的標準測試</h3>
+  <p>用同一套方法測同一類商品，結果掛到商品上，成為 L2 證據。</p>
+  <div class="diagram"><pre class="mermaid">
+flowchart LR
+  T["實測單位"] --> P["照 categories.json 的方法測"] --> L2["結果成為 L2 證據"] --> I[("附到索引的商品上")]
+  </pre></div>
+</div>
+
+<p class="note">這一版不處理：多門號開多個 Google 帳號、商家刷單、退貨。</p>
+
+<h2>AI 閱讀版</h2>
+<p class="note">同一份架構寫成結構化資料，讓 AI 可以直接讀懂角色、元件和每一條流程的步驟。檔案：<code>architecture.ai.json</code>。</p>
+<details>
+<summary>architecture.ai.json（點開）</summary>
+<pre id="arch">載入中…</pre>
+</details>
+</div>
+
+<script>
+(function(){
+  var el=document.getElementById('arch');
+  fetch('architecture.ai.json').then(function(r){if(!r.ok)throw new Error(r.status);return r.text();})
+    .then(function(t){el.textContent=t;})
+    .catch(function(){el.textContent='讀不到 architecture.ai.json。檔案在 docs\\ai_ad_standard\\ 資料夾裡。';});
+})();
+</script>

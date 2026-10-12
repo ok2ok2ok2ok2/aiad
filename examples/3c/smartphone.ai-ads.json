@@ -1,0 +1,174 @@
+{
+  "aiad": "0.1",
+  "issuer": {
+    "name": "AIAD Templates (unofficial, not published by the brand)",
+    "domain": "aiad-templates.example",
+    "contact": "templates@aiad-templates.example"
+  },
+  "updated": "2026-10-12T12:00:00+08:00",
+  "offers": [
+    {
+      "id": "apple-iphone-18-pro",
+      "type": "product",
+      "category": "smartphone",
+      "title": "Apple iPhone 18 Pro",
+      "summary": "6.3-inch 120 Hz OLED phone with A20 Pro chip and three 48 MP rear cameras. 256 GB to 2 TB storage, 211 g, IP68 (6 m for 30 minutes). Up to 36 hours of video playback. USB-C at up to 10 Gb/s, MagSafe up to 25 W.",
+      "url": "https://www.apple.com/iphone-18-pro/specs/",
+      "region": [
+        "US"
+      ],
+      "specs": [
+        {
+          "name": "display_in",
+          "value": 6.3,
+          "unit": "in"
+        },
+        {
+          "name": "display_resolution",
+          "value": "2622 x 1206"
+        },
+        {
+          "name": "refresh_rate_max_hz",
+          "value": 120,
+          "unit": "Hz"
+        },
+        {
+          "name": "chip",
+          "value": "A20 Pro"
+        },
+        {
+          "name": "storage_options_gb",
+          "value": "256 / 512 / 1024 / 2048"
+        },
+        {
+          "name": "weight_g",
+          "value": 211,
+          "unit": "g"
+        },
+        {
+          "name": "ingress_rating",
+          "value": "IP68 (6 m, 30 min)"
+        },
+        {
+          "name": "video_playback_h",
+          "value": 36,
+          "unit": "h"
+        },
+        {
+          "name": "wireless_charging_max_w",
+          "value": 25,
+          "unit": "W"
+        },
+        {
+          "name": "usb",
+          "value": "USB-C, USB 3 up to 10 Gb/s"
+        },
+        {
+          "name": "rear_cameras",
+          "value": "48 MP main + 48 MP ultra wide + 48 MP telephoto"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "Up to 36 hours of video playback",
+          "level": "L1",
+          "evidence_url": "https://www.apple.com/iphone-18-pro/specs/"
+        },
+        {
+          "statement": "IP68, up to 6 m for 30 minutes under IEC 60529",
+          "level": "L1",
+          "evidence_url": "https://www.apple.com/iphone-18-pro/specs/"
+        }
+      ],
+      "suitable_for": [
+        "People who want a flagship camera in a 6.3-inch phone",
+        "Moving large video files over a 10 Gb/s USB-C cable"
+      ],
+      "not_suitable_for": [
+        "Fast wired charging without a 60 W or higher USB-C adapter: the advertised 50% in about 15 minutes needs one",
+        "USB 3 speeds with a basic cable: 10 Gb/s needs a cable rated for it",
+        "People who need a stylus"
+      ],
+      "valid_from": "2026-10-12T00:00:00+08:00",
+      "valid_until": "2026-12-31T23:59:59+08:00",
+      "sponsorship": {
+        "paid": false
+      }
+    },
+    {
+      "id": "samsung-galaxy-s26-ultra",
+      "type": "product",
+      "category": "smartphone",
+      "title": "Samsung Galaxy S26 Ultra",
+      "summary": "6.9-inch phone with Snapdragon 8 Elite Gen 5 for Galaxy and Privacy Display. 200 MP main camera and 50 MP 5x optical telephoto. 5000 mAh battery, up to 75% in about 30 minutes with Super Fast Charging 3.0. 214 g.",
+      "url": "https://www.samsung.com/us/smartphones/galaxy-s26-ultra/",
+      "region": [
+        "US"
+      ],
+      "price": {
+        "amount": "1299.99",
+        "currency": "USD",
+        "conditions": "Samsung US starting price before trade-in, read on 2026-10-12"
+      },
+      "specs": [
+        {
+          "name": "display_in",
+          "value": 6.9,
+          "unit": "in"
+        },
+        {
+          "name": "chip",
+          "value": "Snapdragon 8 Elite Gen 5 for Galaxy"
+        },
+        {
+          "name": "battery_mah",
+          "value": 5000,
+          "unit": "mAh"
+        },
+        {
+          "name": "fast_charge",
+          "value": "up to 75% in about 30 min (Super Fast Charging 3.0)"
+        },
+        {
+          "name": "weight_g",
+          "value": 214,
+          "unit": "g"
+        },
+        {
+          "name": "main_camera_mp",
+          "value": 200,
+          "unit": "MP"
+        },
+        {
+          "name": "telephoto",
+          "value": "50 MP, 5x optical"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "200 MP main camera and 50 MP 5x optical telephoto",
+          "level": "L1",
+          "evidence_url": "https://www.samsung.com/us/smartphones/galaxy-s26-ultra/"
+        },
+        {
+          "statement": "Up to 75% charge in around 30 minutes",
+          "level": "L1",
+          "evidence_url": "https://www.samsung.com/us/smartphones/galaxy-s26-ultra/"
+        }
+      ],
+      "suitable_for": [
+        "Android users who want a 5x optical telephoto",
+        "People who want a large 6.9-inch screen"
+      ],
+      "not_suitable_for": [
+        "One-handed use: 6.9-inch screen and 214 g",
+        "Buyers on a tight budget: starts at USD 1,299.99"
+      ],
+      "valid_from": "2026-10-12T00:00:00+08:00",
+      "valid_until": "2026-12-31T23:59:59+08:00",
+      "sponsorship": {
+        "paid": false
+      }
+    }
+  ]
+}

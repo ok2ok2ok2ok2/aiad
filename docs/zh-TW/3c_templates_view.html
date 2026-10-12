@@ -1,0 +1,256 @@
+<title>AIAD 3C 範本一覽</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: 單欄閱讀，每類一節、每款產品一張卡；卡內 規格表 + 適合/不適合 兩欄 */
+:root{
+  --bg:#f4f5f7; --surface:#ffffff; --ink:#1c2230; --muted:#5e6778; --line:#dde1e8;
+  --accent:#2f5bd3; --ok:#1d7a4f; --ok-soft:#e5f4ec; --no:#b3401f; --no-soft:#fbeae4; --code-bg:#eef0f4;
+  --f-body:"Noto Sans TC","Microsoft JhengHei","PingFang TC",sans-serif;
+  --f-mono:"JetBrains Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#12151c; --surface:#1a1f29; --ink:#e3e7ef; --muted:#9aa3b5; --line:#2c3342;
+  --accent:#86a6ff; --ok:#6fd3a0; --ok-soft:#183126; --no:#f29a7c; --no-soft:#3a2219; --code-bg:#11141a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12151c; --surface:#1a1f29; --ink:#e3e7ef; --muted:#9aa3b5; --line:#2c3342;
+  --accent:#86a6ff; --ok:#6fd3a0; --ok-soft:#183126; --no:#f29a7c; --no-soft:#3a2219; --code-bg:#11141a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.7}
+.wrap{max-width:860px;margin:0 auto;padding-inline:16px;padding-block:28px 64px;display:grid;gap:20px}
+h1{font-size:clamp(24px,4vw,32px);margin:0;text-wrap:balance}
+.lede{color:var(--muted);margin:6px 0 0}
+h2{font-size:20px;margin:24px 0 0;padding-bottom:6px;border-bottom:2px solid var(--line)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px;display:grid;gap:12px;min-width:0}
+.card h3{font-size:19px;margin:0}
+.one{margin:0}
+.price{font-family:var(--f-mono);font-size:15px}
+.price .cond{font-family:var(--f-body);color:var(--muted);font-size:13px;display:block}
+.nop{color:var(--muted);font-size:14px}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+td{padding:6px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{color:var(--muted);white-space:nowrap;width:38%}
+td:last-child{font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:none}
+.fit{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.fit > div{border-radius:6px;padding:10px 14px;min-width:0}
+.fit .yes{background:var(--ok-soft)} .fit .no{background:var(--no-soft)}
+.fit h4{margin:0 0 4px;font-size:14px}
+.yes h4{color:var(--ok)} .no h4{color:var(--no)}
+.fit ul{margin:0;padding-left:1.2em;font-size:14px}
+.ev{font-size:13px;color:var(--muted);margin:0}
+.lv{font-family:var(--f-mono);font-size:11px;border:1px solid currentColor;border-radius:3px;padding:0 4px;margin-right:4px}
+.flag{font-size:13px;color:var(--no);margin:0}
+.ai{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:6px;padding:14px 18px}
+.ai .q{font-weight:700;margin:0 0 6px}
+.ai p{margin:0 0 8px} .ai p:last-child{margin:0}
+.who{font-size:12px;color:var(--muted);letter-spacing:.06em}
+.rv{border-top:1px dashed var(--line);padding-top:10px;display:grid;gap:8px}
+.rv h4{margin:0;font-size:14px}
+.rv .zero{font-size:13px;color:var(--muted);margin:0}
+.rv ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.rv li{font-size:14px;background:var(--code-bg);border-radius:6px;padding:8px 12px}
+.rv .src{font-weight:700}
+.rv .sc{font-family:var(--f-mono);font-size:13px;margin-left:6px}
+.rv .pc{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:8px}
+details summary{cursor:pointer;padding:12px 16px;font-weight:500}
+details summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+details pre{font-family:var(--f-mono);font-size:12.5px;line-height:1.55;background:var(--code-bg);border-radius:6px;margin:0 12px 12px;padding:12px 14px;overflow-x:auto;white-space:pre}
+a{color:var(--accent)}
+</style>
+
+<div class="wrap">
+<header>
+  <h1>AIAD 3C 範本一覽</h1>
+  <p class="lede">把三份範本檔案的內容翻成一般人看得懂的文字。這些就是 AI 助理讀到的資訊；原始檔案是英文 JSON，這裡用中文呈現。所有範本都是非官方示範，不是品牌自己發佈的。</p>
+</header>
+
+<section class="ai">
+  <div class="who">AI 助理讀了這些檔案後，可以這樣回答</div>
+  <p class="q">問：我用 Android，想買降噪耳機，常常在手機和筆電之間切換。</p>
+  <p>建議 <strong>Sony WF-1000XM6</strong>：支援 LDAC 高音質（Android 才用得到），也支援多點連線，可以同時連手機和筆電。開降噪約 8 小時，加上充電盒約 24 小時。</p>
+  <p>不建議 AirPods Pro 3：心率等功能要搭配 iPhone，也不支援 LDAC。</p>
+  <p>要注意：Sony 只有 IPX4 防潑水，不能游泳，也沒有防塵等級。</p>
+</section>
+
+<h2>行動電源</h2>
+<article class="card">
+  <h3>Anker Prime Power Bank（26K, 300W）</h3>
+  <p class="one">26,250 mAh 大容量行動電源，三個孔加起來最高 300W，可以幫筆電充電。</p>
+  <p class="price">CAD 279.99<span class="cond">加拿大官網售價，不含充電底座（2026-10-12 查詢）</span></p>
+  <div class="tbl"><table>
+    <tr><td>容量</td><td>26,250 mAh（99.75 Wh）</td></tr>
+    <tr><td>總輸出</td><td>300 W</td></tr>
+    <tr><td>USB-C</td><td>2 個，單孔最高 140 W</td></tr>
+    <tr><td>USB-A</td><td>1 個，最高 22.5 W</td></tr>
+    <tr><td>充電輸入</td><td>最高 250 W（兩個 USB-C 一起充）</td></tr>
+    <tr><td>重量</td><td>600 g</td></tr>
+    <tr><td>尺寸</td><td>159.9 × 38 × 62.7 mm</td></tr>
+  </table></div>
+  <div class="fit">
+    <div class="yes"><h4>適合</h4><ul>
+      <li>出門要幫支援 140W USB-C 的筆電充電</li>
+      <li>筆電和手機同時充</li>
+      <li>搭飛機想帶大容量、又要低於 100 Wh 限制</li>
+    </ul></div>
+    <div class="no"><h4>不適合</h4><ul>
+      <li>想放口袋：重 600 克</li>
+      <li>放託運行李：鋰電池行動電源只能隨身帶</li>
+      <li>用 USB-A 快充：那個孔最高只有 22.5W</li>
+    </ul></div>
+  </div>
+  <div class="rv">
+    <h4>評價</h4>
+    <p class="zero">買家評價（有購買證明）：0 則，平台還沒上線所以沒有分數。下面是媒體評測，只列出、不算進分數。</p>
+    <ul><li><a class="src" href="https://www.digitalcameraworld.com/tech/chargers-power-banks-and-batteries/anker-prime-power-bank-26k-300w-review">Digital Camera World</a><br>非常強、設計好；但 140W 用不用得到要看你的裝置，很多人買便宜一點、慢一點的就夠了。<span class="pc">優：可同時充兩台筆電、螢幕與 App 詳細、回充很快｜缺：多數人用不到 300W、比一般行動電源貴很多</span></li><li><a class="src" href="https://www.thestar.co.uk/recommended/anker-prime-power-bank-300w-charger-usb-c-battery-5495148">The Star（英國）</a><br>輸出非常大、安全功能完整，可搭桌上底座，但價格偏高。<span class="pc">缺：價格高</span></li></ul>
+  </div>
+  <p class="ev"><span class="lv">L1</span>總輸出與單孔功率、99.75 Wh 都出自 Anker 官網。</p>
+</article>
+
+<h2>真無線耳機</h2>
+<article class="card">
+  <h3>Apple AirPods Pro 3</h3>
+  <p class="one">降噪耳機，內建心率感測器，耳機和充電盒都有 IP57 防塵防水。</p>
+  <p class="nop">價格：官方規格頁沒有寫，所以不填。</p>
+  <div class="tbl"><table>
+    <tr><td>續航（開降噪）</td><td>單次 8 小時，含充電盒 24 小時</td></tr>
+    <tr><td>防塵防水</td><td>IP57</td></tr>
+    <tr><td>重量</td><td>耳機每顆 5.55 g，充電盒 43.99 g</td></tr>
+    <tr><td>藍牙</td><td>5.3</td></tr>
+    <tr><td>充電盒充電方式</td><td>USB-C、MagSafe、Qi 無線、Apple Watch 充電器</td></tr>
+    <tr><td>心率感測</td><td>有</td></tr>
+  </table></div>
+  <div class="fit">
+    <div class="yes"><h4>適合</h4><ul>
+      <li>iPhone 使用者，想要降噪</li>
+      <li>運動流汗、淋雨，順便記錄心率</li>
+    </ul></div>
+    <div class="no"><h4>不適合</h4><ul>
+      <li>Android 使用者：心率要 iPhone（iOS 26 以上），很多功能限 Apple</li>
+      <li>想要 LDAC、aptX 高音質</li>
+      <li>游泳：IP57 不能游泳</li>
+    </ul></div>
+  </div>
+  <div class="rv">
+    <h4>評價</h4>
+    <p class="zero">買家評價（有購買證明）：0 則，平台還沒上線所以沒有分數。下面是媒體評測，只列出、不算進分數。</p>
+    <ul><li><a class="src" href="https://www.digitaltrends.com/home-theater/apple-airpods-pro-3-review/">Digital Trends</a><span class="sc">7 / 10</span><br>更成熟、更耐用的旗艦款。</li><li><a class="src" href="https://www.tomsguide.com/audio/airpods/airpods-pro-3-review">Tom's Guide</a><br>目前最好的 AirPods。<span class="pc">優：降噪與通透模式、心率感測</span></li><li><a class="src" href="https://www.whathifi.com/headphones/apple-airpods-pro-3">What Hi-Fi?</a><br>平衡、好聽、好上手的高階耳機，特別適合 iPhone 使用者。<span class="pc">缺：沒有一般的等化器、離開 Apple 裝置功能受限</span></li></ul>
+  </div>
+  <p class="ev"><span class="lv">L1</span>續航與 IP57 都出自 Apple 官網規格頁。</p>
+</article>
+
+<article class="card">
+  <h3>Sony WF-1000XM6</h3>
+  <p class="one">降噪耳機，支援 LDAC 高音質和多點連線。</p>
+  <p class="nop">價格：官方規格頁沒有寫，所以不填。</p>
+  <div class="tbl"><table>
+    <tr><td>續航（開降噪）</td><td>單次 8 小時，含充電盒 24 小時</td></tr>
+    <tr><td>快充</td><td>充 5 分鐘，約可聽 60 分鐘</td></tr>
+    <tr><td>防水</td><td>IPX4（防潑水，無防塵等級）</td></tr>
+    <tr><td>重量</td><td>耳機每顆約 6.5 g</td></tr>
+    <tr><td>藍牙</td><td>5.3，支援 LDAC、多點連線</td></tr>
+    <tr><td>單體</td><td>8.4 mm</td></tr>
+  </table></div>
+  <div class="fit">
+    <div class="yes"><h4>適合</h4><ul>
+      <li>Android 使用者，想要 LDAC 高音質</li>
+      <li>常在手機和筆電之間切換</li>
+    </ul></div>
+    <div class="no"><h4>不適合</h4><ul>
+      <li>iPhone 使用者想用 LDAC：iPhone 不支援</li>
+      <li>多灰塵的環境或游泳：IPX4 只防潑水</li>
+    </ul></div>
+  </div>
+  <div class="rv">
+    <h4>評價</h4>
+    <p class="zero">買家評價（有購買證明）：0 則，平台還沒上線所以沒有分數。下面是媒體評測，只列出、不算進分數。</p>
+    <ul><li><a class="src" href="https://www.whathifi.com/headphones/wireless-earbuds/sony-wf-1000xm6">What Hi-Fi?</a><br>整體表現好到讓同價位對手都要擔心。<span class="pc">優：自然有音樂性、降噪極佳、通話好｜缺：耳塞選擇少、充電盒偏大</span></li><li><a class="src" href="https://www.techradar.com/audio/earbuds-airpods/sony-wf-1000xm6-review">TechRadar</a><br>聲音好、功能多，但降噪、通話、配戴已被對手追上。<span class="pc">缺：降噪進步了但不是頂尖</span></li><li><a class="src" href="https://www.rtings.com/headphones/reviews/sony/wf-1000xm6">RTINGS</a><br>很適合運動健身，隔音很強。<span class="pc">缺：耳朵小的人跑步時可能掉出來、續航沒比上一代進步、做工有點廉價感</span></li></ul>
+  </div>
+  <p class="ev"><span class="lv">L1</span>標示為 Sony 官網規格。</p>
+  <p class="flag">注意：Sony 官網擋掉讀取，這些數字取自搜尋摘要，還沒人工核對。</p>
+</article>
+
+<h2>手機</h2>
+<article class="card">
+  <h3>Apple iPhone 18 Pro</h3>
+  <p class="one">6.3 吋旗艦手機，A20 Pro 晶片，後面三顆鏡頭都是 4800 萬畫素。</p>
+  <p class="nop">價格：官方規格頁沒有寫，所以不填。</p>
+  <div class="tbl"><table>
+    <tr><td>螢幕</td><td>6.3 吋 OLED，2622 × 1206，最高 120Hz</td></tr>
+    <tr><td>晶片</td><td>A20 Pro</td></tr>
+    <tr><td>容量</td><td>256 GB / 512 GB / 1 TB / 2 TB</td></tr>
+    <tr><td>重量</td><td>211 g</td></tr>
+    <tr><td>防水</td><td>IP68（水深 6 公尺 30 分鐘）</td></tr>
+    <tr><td>影片播放</td><td>最長 36 小時</td></tr>
+    <tr><td>無線充電</td><td>MagSafe 最高 25 W</td></tr>
+    <tr><td>USB</td><td>USB-C，USB 3 最高 10 Gb/s</td></tr>
+    <tr><td>後鏡頭</td><td>48MP 主鏡頭 + 48MP 超廣角 + 48MP 望遠</td></tr>
+  </table></div>
+  <div class="fit">
+    <div class="yes"><h4>適合</h4><ul>
+      <li>想要旗艦級相機，又不想要太大的手機</li>
+      <li>常用 USB-C 傳大量影片</li>
+    </ul></div>
+    <div class="no"><h4>不適合</h4><ul>
+      <li>沒有 60W 以上充電器卻想快充：官方說的「約 15 分鐘充到 50%」需要這種充電器</li>
+      <li>用普通線想跑 USB 3：10 Gb/s 要用對應規格的線</li>
+      <li>需要觸控筆</li>
+    </ul></div>
+  </div>
+  <div class="rv">
+    <h4>評價</h4>
+    <p class="zero">買家評價（有購買證明）：0 則，平台還沒上線所以沒有分數。下面是媒體評測，只列出、不算進分數。</p>
+    <ul><li><a class="src" href="https://www.smartprix.com/bytes/apple-iphone-18-pro-review-a-familiar-iphone-with-some-welcome-upgrades/">Smartprix</a><span class="sc">8.8 / 10</span><br>可靠的小尺寸旗艦，電池很強；iPhone 17 Pro 用戶沒必要換。<span class="pc">優：續航、可變光圈主鏡頭｜缺：漲價、鏡頭眩光鬼影、望遠不如部分對手</span></li><li><a class="src" href="https://www.expertreviews.co.uk/technology/phones/apple-iphone-18-pro-review">Expert Reviews</a><br>還是很好的手機；用 iPhone 17 Pro 的人可以跳過。<span class="pc">缺：配色保守</span></li><li><a class="src" href="https://www.whathifi.com/smartphones-tablets/smartphones/apple-iphone-18-pro">What Hi-Fi?</a><br>看片聽歌比上一代小幅進步，本身就是很出色的影音裝置。<span class="pc">缺：入門款漲價 100 英鎊／100 美元</span></li></ul>
+  </div>
+  <p class="ev"><span class="lv">L1</span>影片播放時數與 IP68 都出自 Apple 官網規格頁。</p>
+</article>
+
+<article class="card">
+  <h3>Samsung Galaxy S26 Ultra</h3>
+  <p class="one">6.9 吋大螢幕手機，2 億畫素主鏡頭，5 倍光學變焦。</p>
+  <p class="price">USD 1,299.99<span class="cond">美國官網起售價，未折抵舊機（2026-10-12 查詢）</span></p>
+  <div class="tbl"><table>
+    <tr><td>螢幕</td><td>6.9 吋，有防窺螢幕（Privacy Display）</td></tr>
+    <tr><td>處理器</td><td>Snapdragon 8 Elite Gen 5 for Galaxy</td></tr>
+    <tr><td>電池</td><td>5,000 mAh</td></tr>
+    <tr><td>快充</td><td>約 30 分鐘充到 75%</td></tr>
+    <tr><td>重量</td><td>214 g</td></tr>
+    <tr><td>主鏡頭</td><td>2 億畫素</td></tr>
+    <tr><td>望遠</td><td>5000 萬畫素，5 倍光學</td></tr>
+  </table></div>
+  <div class="fit">
+    <div class="yes"><h4>適合</h4><ul>
+      <li>Android 使用者，想要 5 倍光學望遠</li>
+      <li>喜歡 6.9 吋大螢幕</li>
+    </ul></div>
+    <div class="no"><h4>不適合</h4><ul>
+      <li>單手操作：6.9 吋、214 克</li>
+      <li>預算有限：起價 1,299.99 美元</li>
+    </ul></div>
+  </div>
+  <div class="rv">
+    <h4>評價</h4>
+    <p class="zero">買家評價（有購買證明）：0 則，平台還沒上線所以沒有分數。下面是媒體評測，只列出、不算進分數。</p>
+    <ul><li><a class="src" href="https://www.gsmarena.com/samsung_galaxy_s26_ultra-review-2939p6.php">GSMArena</a><span class="sc">4.5 / 5</span><br>高評價的旗艦機（2026-03-06 評測）。</li><li><a class="src" href="https://www.tomsguide.com/phones/samsung-phones/samsung-galaxy-s26-ultra-review">Tom's Guide</a><br>目前最好的 Android 手機，防窺螢幕真的創新又實用。<span class="pc">優：防窺螢幕、暗光拍照進步｜缺：相機凸起大、沒用矽碳電池、可視角比 S25 Ultra 窄</span></li><li><a class="src" href="https://www.digitaltrends.com/phones/samsung-galaxy-s26-ultra-review/">Digital Trends</a><br>用了四個月：貴，但值得，適合想長期穩定使用的人。<span class="pc">缺：高負載會發熱降速</span></li></ul>
+  </div>
+  <p class="ev"><span class="lv">L1</span>鏡頭規格與快充數據都出自 Samsung 美國官網。</p>
+</article>
+
+<p class="ev">L1 = 品牌自己公開的資料。媒體評測取自各站公開評論的重點摘要，詳見連結原文。哪天第三方用標準實測方法量出實際數字，就可以升級成 L2。目前所有範本都沒有付費贊助。</p>
+<h2>AI 閱讀版</h2>
+<p class="ev">上面每一張卡片，都是從下面這些檔案翻譯來的。AI 助理讀的是這些原始檔。</p>
+<details><summary>power_bank.ai-ads.json（行動電源商品資料）</summary><pre data-src="power_bank.ai-ads.json">載入中…</pre></details>
+<details><summary>earbuds.ai-ads.json（耳機商品資料）</summary><pre data-src="earbuds.ai-ads.json">載入中…</pre></details>
+<details><summary>smartphone.ai-ads.json（手機商品資料）</summary><pre data-src="smartphone.ai-ads.json">載入中…</pre></details>
+<details><summary>reviews.ai-reviews.json（評價資料）</summary><pre data-src="reviews.ai-reviews.json">載入中…</pre></details>
+<details><summary>categories.json（規格詞彙表與標準實測方法）</summary><pre data-src="categories.json">載入中…</pre></details>
+</div>
+<script>
+document.querySelectorAll('pre[data-src]').forEach(function(el){
+  fetch(el.getAttribute('data-src')).then(function(r){if(!r.ok)throw 0;return r.text();})
+    .then(function(t){el.textContent=t;}).catch(function(){el.textContent='讀不到這個檔案。';});
+});
+</script>

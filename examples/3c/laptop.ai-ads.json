@@ -1,0 +1,189 @@
+{
+  "aiad": "0.1",
+  "issuer": {
+    "name": "AIAD Templates (unofficial, not published by the brand)",
+    "domain": "aiad-templates.example",
+    "contact": "templates@aiad-templates.example"
+  },
+  "updated": "2026-10-12T12:00:00+08:00",
+  "offers": [
+    {
+      "id": "apple-macbook-air-13-m5",
+      "type": "product",
+      "category": "laptop",
+      "title": "Apple MacBook Air 13-inch (M5)",
+      "summary": "13.6-inch laptop with Apple M5 chip (10-core CPU), 2560 x 1664 display at 500 nits, 16 GB to 32 GB memory and 512 GB to 4 TB storage. 53.8 Wh battery rated up to 18 h video streaming. Two Thunderbolt 4 ports, MagSafe 3, headphone jack. 1.23 kg.",
+      "url": "https://www.apple.com/macbook-air/specs/",
+      "region": [
+        "US"
+      ],
+      "specs": [
+        {
+          "name": "chip",
+          "value": "Apple M5, 10-core CPU, 8- or 10-core GPU"
+        },
+        {
+          "name": "display_in",
+          "value": 13.6,
+          "unit": "in"
+        },
+        {
+          "name": "display_resolution",
+          "value": "2560 x 1664"
+        },
+        {
+          "name": "display_brightness_nits",
+          "value": 500,
+          "unit": "nits"
+        },
+        {
+          "name": "memory_options",
+          "value": "16 / 24 / 32 GB"
+        },
+        {
+          "name": "storage_options",
+          "value": "512 GB / 1 TB / 2 TB / 4 TB"
+        },
+        {
+          "name": "battery_wh",
+          "value": 53.8,
+          "unit": "Wh"
+        },
+        {
+          "name": "battery_video_h",
+          "value": 18,
+          "unit": "h"
+        },
+        {
+          "name": "battery_web_h",
+          "value": 15,
+          "unit": "h"
+        },
+        {
+          "name": "weight_kg",
+          "value": 1.23,
+          "unit": "kg"
+        },
+        {
+          "name": "thunderbolt_ports",
+          "value": 2
+        },
+        {
+          "name": "ports",
+          "value": "2x Thunderbolt 4 (USB-C), MagSafe 3, 3.5 mm headphone jack"
+        },
+        {
+          "name": "charger_included",
+          "value": "40W Dynamic Power Adapter (60W max) with USB-C to MagSafe 3 cable"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "Up to 18 hours video streaming and 15 hours wireless web",
+          "level": "L1",
+          "evidence_url": "https://www.apple.com/macbook-air/specs/"
+        }
+      ],
+      "suitable_for": [
+        "Students and office work where battery life and low weight matter",
+        "Mac users who want a light 13-inch laptop"
+      ],
+      "not_suitable_for": [
+        "Connecting HDMI or USB-A devices without an adapter: only Thunderbolt 4, MagSafe and a headphone jack",
+        "Workloads that need more than 32 GB of memory: 32 GB is the maximum"
+      ],
+      "valid_from": "2026-10-12T00:00:00+08:00",
+      "valid_until": "2026-12-31T23:59:59+08:00",
+      "sponsorship": {
+        "paid": false
+      }
+    },
+    {
+      "id": "dell-xps-14-2026",
+      "type": "product",
+      "category": "laptop",
+      "title": "Dell XPS 14 (2026, DA14260)",
+      "summary": "14-inch laptop with Intel Core Ultra 5 325 or Core Ultra 7 358H, 1920 x 1200 display at 1-120 Hz and 500 nits (2.8K OLED option), 16 GB or 32 GB LPDDR5x, 70 Wh battery. Three Thunderbolt 4 ports. From 1.36 kg.",
+      "url": "https://www.dell.com/en-us/shop/dell-laptops/xps-14-laptop/spd/xps-da14260-laptop",
+      "region": [
+        "US"
+      ],
+      "price": {
+        "amount": "2149.99",
+        "currency": "USD",
+        "conditions": "Dell US price for the Core Ultra 5 325 / 16 GB / 512 GB configuration, read on 2026-10-12"
+      },
+      "specs": [
+        {
+          "name": "chip",
+          "value": "Intel Core Ultra 5 325 or Core Ultra 7 358H"
+        },
+        {
+          "name": "display_in",
+          "value": 14.0,
+          "unit": "in"
+        },
+        {
+          "name": "display_resolution",
+          "value": "1920 x 1200 (2.8K OLED option)"
+        },
+        {
+          "name": "refresh_rate_max_hz",
+          "value": 120,
+          "unit": "Hz"
+        },
+        {
+          "name": "display_brightness_nits",
+          "value": 500,
+          "unit": "nits"
+        },
+        {
+          "name": "memory_options",
+          "value": "16 / 32 GB LPDDR5x"
+        },
+        {
+          "name": "storage_options",
+          "value": "512 GB / 1 TB"
+        },
+        {
+          "name": "battery_wh",
+          "value": 70,
+          "unit": "Wh"
+        },
+        {
+          "name": "weight_kg",
+          "value": 1.38,
+          "unit": "kg"
+        },
+        {
+          "name": "thunderbolt_ports",
+          "value": 3
+        },
+        {
+          "name": "ports",
+          "value": "3x Thunderbolt 4 (USB-C) with DisplayPort 2.1 and Power Delivery, audio jack, Kensington lock slot"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "70 Wh battery; three Thunderbolt 4 ports",
+          "level": "L1",
+          "evidence_url": "https://www.dell.com/en-us/shop/dell-laptops/xps-14-laptop/spd/xps-da14260-laptop"
+        }
+      ],
+      "suitable_for": [
+        "Windows users who want a thin 14-inch laptop with a 70 Wh battery",
+        "People who connect several USB-C or Thunderbolt devices"
+      ],
+      "not_suitable_for": [
+        "Buyers on a tight budget: listed from USD 2,149.99",
+        "Connecting HDMI or USB-A devices without an adapter: only Thunderbolt 4 ports"
+      ],
+      "valid_from": "2026-10-12T00:00:00+08:00",
+      "valid_until": "2026-12-31T23:59:59+08:00",
+      "sponsorship": {
+        "paid": false
+      }
+    }
+  ]
+}
